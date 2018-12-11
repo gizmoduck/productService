@@ -1,0 +1,6 @@
+com/gizmoduck/productService/config/SwaggerConfig.class
+com/gizmoduck/productService/domain/Product.class
+com/gizmoduck/productService/controller/ProductController.class
+com/gizmoduck/productService/repository/ProductRepository.class
+com/gizmoduck/productService/Application.class
+com/gizmoduck/productService/domain/Product$ProductBuilder.class

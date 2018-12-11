@@ -1,0 +1,25 @@
+This tutorial also have swagger Integration
+http://localhost:8080/swagger-ui.html
+
+
+Run the following command in your terminal to RUN POSTGRES in docker:
+
+$ docker run --name oms_postgres -p 5432:5432 -e POSTGRES_USER=dbuser -e POSTGRES_DB=products_db -e POSTGRES_PASSWORD=password -d postgres
+
+
+
+Dockerise the app
+Create a file named “dockerFile” in the root folder of the application and add the following contents into it :
+
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+COPY build/libs/*.jar app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+EXPOSE 8080
+
+Build :
+docker build .
+
+Run :
+docker run -p 8080:8080 [image-id]
+This should start a service at localhost:8080
